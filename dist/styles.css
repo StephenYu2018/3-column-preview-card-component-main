@@ -517,6 +517,14 @@ video {
   height: 100vh;
 }
 
+.font-big-shoulders-display {
+  font-family: 'Big Shoulders Display', cursive;
+}
+
+.font-lexend-deca {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
 .text-\[15px\] {
   font-size: 15px;
 }

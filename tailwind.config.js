@@ -9,6 +9,10 @@ module.exports = {
       "transparent-white": "hsla(0, 0%, 100%, 0.75)",
       "very-light-gray": "hsl(0, 0%, 95%)",
     },
+    fontFamily: {
+      "lexend-deca": ["'Lexend Deca'", "sans-serif"],
+      "big-shoulders-display": ["'Big Shoulders Display'", "cursive"],
+    },
     extend: {},
   },
   plugins: [],
