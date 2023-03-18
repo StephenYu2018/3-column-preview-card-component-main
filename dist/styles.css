@@ -525,8 +525,8 @@ video {
   height: 100vh;
 }
 
-.w-\[325px\] {
-  width: 325px;
+.w-\[21\.667rem\] {
+  width: 21.667rem;
 }
 
 .w-auto {
@@ -545,16 +545,16 @@ video {
   justify-content: center;
 }
 
-.space-y-\[28px\] > :not([hidden]) ~ :not([hidden]) {
+.space-y-\[1\.867rem\] > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
-  margin-top: calc(28px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(28px * var(--tw-space-y-reverse));
+  margin-top: calc(1.867rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.867rem * var(--tw-space-y-reverse));
 }
 
-.space-y-\[33px\] > :not([hidden]) ~ :not([hidden]) {
+.space-y-\[2\.2rem\] > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
-  margin-top: calc(33px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(33px * var(--tw-space-y-reverse));
+  margin-top: calc(2.2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.2rem * var(--tw-space-y-reverse));
 }
 
 .overflow-hidden {
@@ -579,18 +579,18 @@ video {
   background-color: hsl(0 0% 95% / var(--tw-bg-opacity));
 }
 
-.p-\[46px\] {
-  padding: 46px;
+.p-\[3\.067rem\] {
+  padding: 3.067rem;
 }
 
-.px-\[29px\] {
-  padding-left: 29px;
-  padding-right: 29px;
+.px-\[1\.933rem\] {
+  padding-left: 1.933rem;
+  padding-right: 1.933rem;
 }
 
-.py-\[12px\] {
-  padding-top: 12px;
-  padding-bottom: 12px;
+.py-\[0\.8rem\] {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 .font-big-shoulders-display {
