@@ -513,8 +513,8 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.mt-\[1\.6rem\] {
-  margin-top: 1.6rem;
+.mt-\[1\.5rem\] {
+  margin-top: 1.5rem;
 }
 
 .mt-\[1\.8rem\] {
@@ -664,4 +664,10 @@ video {
 .text-very-light-gray {
   --tw-text-opacity: 1;
   color: hsl(0 0% 95% / var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex-row {
+    flex-direction: row;
+  }
 }
