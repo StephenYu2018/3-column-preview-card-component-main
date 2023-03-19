@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html"],
+  content: [
+    "./index.html",
+    "./cards.js",
+  ],
   theme: {
     colors: {
       "bright-orange": "hsl(31, 77%, 52%)",
