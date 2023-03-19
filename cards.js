@@ -75,10 +75,10 @@ function makeCard(carType, summary, primaryColor) {
 
   function makeLearnMore() {
     const link = document.createElement('a');
-    link.className = 'inline-block bg-very-light-gray '
-      + `${colorVariants.hover.background[primaryColor]} border-2 `
-      + 'border-very-light-gray rounded-full px-[1.8rem] py-[0.667rem] '
-      + 'font-lexend-deca font-normal text-base '
+    link.className = 'inline-block select-none hover:cursor-pointer '
+      + `bg-very-light-gray ${colorVariants.hover.background[primaryColor]} `
+      + 'border-2 border-very-light-gray rounded-full px-[1.8rem] '
+      + 'py-[0.667rem] font-lexend-deca font-normal text-base '
       + `${colorVariants.text[primaryColor]} hover:text-very-light-gray`;
     link.innerHTML = 'Learn More';
     return link;

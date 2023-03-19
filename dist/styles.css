@@ -545,6 +545,12 @@ video {
   width: auto;
 }
 
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -677,6 +683,10 @@ video {
 .text-very-light-gray {
   --tw-text-opacity: 1;
   color: hsl(0 0% 95% / var(--tw-text-opacity));
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 .hover\:bg-bright-orange:hover {
