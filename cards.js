@@ -29,7 +29,8 @@ function makeCard(carType, summary, primaryColor) {
 
   const card = document.createElement('article');
   card.className = `${colorVariants.background[primaryColor]} w-[21.667rem] `
-    + 'h-auto p-[3.067rem] space-y-[1.8rem]';
+    + 'lg:w-[20.2rem] h-auto p-[3.067rem] space-y-[1.8rem] '
+    + 'lg:space-y-[5.3rem]';
   
   card.append(makeCardInfo(), makeLearnMoreButton())
   return card;
@@ -50,7 +51,7 @@ function makeCard(carType, summary, primaryColor) {
     function makeHeading() {
       const heading = document.createElement('h1');
       heading.className = 'font-big-shoulders-display font-bold text-[2.6rem] '
-        + 'text-very-light-gray uppercase mt-[2.2rem]';
+        + 'text-very-light-gray uppercase mt-[2.2rem] lg:mt-[2rem]';
       heading.innerHTML = carType;
       return heading;
     }
@@ -58,7 +59,8 @@ function makeCard(carType, summary, primaryColor) {
     function makeParagraph() {
       const paragraph = document.createElement('p');
       paragraph.className = 'font-lexend-deca font-normal text-base '
-        + 'text-transparent-white leading-[1.7] mt-[1.5rem]';
+        + 'text-transparent-white leading-[1.7] lg:leading-[1.8] mt-[1.5rem] '
+        + 'lg:mt-[1.1rem]';
       paragraph.innerHTML = summary;
       return paragraph;
     }

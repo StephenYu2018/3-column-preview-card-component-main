@@ -667,7 +667,29 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:mt-\[1\.1rem\] {
+    margin-top: 1.1rem;
+  }
+
+  .lg\:mt-\[2rem\] {
+    margin-top: 2rem;
+  }
+
+  .lg\:w-\[20\.2rem\] {
+    width: 20.2rem;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:space-y-\[5\.3rem\] > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(5.3rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(5.3rem * var(--tw-space-y-reverse));
+  }
+
+  .lg\:leading-\[1\.8\] {
+    line-height: 1.8;
   }
 }
