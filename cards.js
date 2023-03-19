@@ -24,7 +24,14 @@ function makeCard(carType, summary, primaryColor) {
       brightOrange: 'text-bright-orange',
       darkCyan: 'text-dark-cyan',
       veryDarkCyan: 'text-very-dark-cyan',
-    }
+    },
+    hover: {
+      background: {
+        brightOrange: 'hover:bg-bright-orange',
+        darkCyan: 'hover:bg-dark-cyan',
+        veryDarkCyan: 'hover:bg-very-dark-cyan',
+      },
+    },
   };
 
   const card = document.createElement('article');
@@ -32,7 +39,7 @@ function makeCard(carType, summary, primaryColor) {
     + 'lg:w-[20.2rem] h-auto p-[3.067rem] space-y-[1.8rem] '
     + 'lg:space-y-[5.3rem]';
   
-  card.append(makeCardInfo(), makeLearnMoreButton())
+  card.append(makeCardInfo(), makeLearnMore())
   return card;
 
   function makeCardInfo() {
@@ -66,13 +73,14 @@ function makeCard(carType, summary, primaryColor) {
     }
   }
 
-  function makeLearnMoreButton() {
-    const button = document.createElement('button');
-    button.className = 'bg-very-light-gray rounded-full px-[1.933rem] '
-      + 'py-[0.8rem] font-lexend-deca font-normal text-base '
-      + `${colorVariants.text[primaryColor]}`;
-    button.type = 'button';
-    button.innerHTML = 'Learn More';
-    return button;
+  function makeLearnMore() {
+    const link = document.createElement('a');
+    link.className = 'inline-block bg-very-light-gray '
+      + `${colorVariants.hover.background[primaryColor]} border-2 `
+      + 'border-very-light-gray rounded-full px-[1.8rem] py-[0.667rem] '
+      + 'font-lexend-deca font-normal text-base '
+      + `${colorVariants.text[primaryColor]} hover:text-very-light-gray`;
+    link.innerHTML = 'Learn More';
+    return link;
   }
 }
