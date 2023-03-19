@@ -689,6 +689,10 @@ video {
     margin-bottom: calc(5.3rem * var(--tw-space-y-reverse));
   }
 
+  .lg\:pt-12 {
+    padding-top: 3rem;
+  }
+
   .lg\:leading-\[1\.8\] {
     line-height: 1.8;
   }
