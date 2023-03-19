@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution]()
+- [Solution](https://www.frontendmentor.io/solutions/3column-preview-card-tailwindcss-vanilla-js-rPQutQSZgO)
 - [Live Site](https://your-live-site-url.com)
 
 ## My process
