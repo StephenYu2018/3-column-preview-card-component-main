@@ -50,7 +50,7 @@ function makeCard(carType, summary, primaryColor) {
     function makeHeading() {
       const heading = document.createElement('h1');
       heading.className = 'font-big-shoulders-display font-bold text-[2.6rem] '
-        + 'text-very-light-gray uppercase mt-[1.8rem]';
+        + 'text-very-light-gray uppercase mt-[2.2rem]';
       heading.innerHTML = carType;
       return heading;
     }
@@ -58,7 +58,7 @@ function makeCard(carType, summary, primaryColor) {
     function makeParagraph() {
       const paragraph = document.createElement('p');
       paragraph.className = 'font-lexend-deca font-normal text-base '
-        + 'text-transparent-white leading-relaxed mt-[1.6rem]';
+        + 'text-transparent-white leading-[1.7] mt-[1.5rem]';
       paragraph.innerHTML = summary;
       return paragraph;
     }
