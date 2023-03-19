@@ -1,92 +1,172 @@
-# Frontend Mentor - 3-column preview card component
+# Frontend Mentor - 3-column preview card component solution
 
-![Design preview for the 3-column preview card component coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [3-column preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this 3-column preview card component and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout depending on their device's screen size
 - See hover states for interactive elements
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![](./screenshot.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
+### Links
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
+- [Solution]()
+- [Live Site](https://your-live-site-url.com)
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## My process
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### Built with
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Mobile-first workflow
+- Vanilla JS
+- [TailwindCSS](https://tailwindcss.com/) - CSS Utility Framework
 
-## Building your project
+### What I learned
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+When I first read the challenge name, the `columns` CSS shorthand property 
+popped into my head. Unfortunately, that didn't account for responsive design. 
+The next thing I thought about was Flexbox, which did work.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+Another challenge I came across was maintaining styles for all 3 cards. Any 
+change to the card's structure or styling meant I would have to find and 
+change all 3 of them. This is one of the several main issues with code 
+duplication.
 
-## Deploying your project
+My solution was to separate card creation into a JS function. Then, I could 
+call that function 3 times when the page loads. For each card, I could pass 
+in different content and primary colors as arguments. I decided to take a 
+more functional approach, opting for pure functions and nesting them to 
+reduce duplicate parameters.
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+While I could've used a JS frontend framework like ReactJS so that my code 
+would be more organized, I also wanted to familiarize myself with the 
+`Document` Web API and to experience working with the low-level vanilla JS 
+over higher-level frameworks.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+I also started paying more attention to HTML semantics. For example, I used 
+replaced my "Learn More" `<button>` with `<a>` to denote a link. That would 
+make more sense, since a user who would click on it should be directed to a 
+separate page containing more info.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+### Continued development
 
-## Create a custom `README.md`
+One of the challenges I faced when using TailwindCSS + vanilla JS was using 
+Tailwind's classes. I discovered that I can't concatenate strings containing 
+only a portion of the TailwindCSS class name. I had to use strings that 
+contained the entire class name, otherwise TailwindCSS cannot read it.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+For example, TailwindCSS won't add the background color styling on `article` 
+dynamically:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+```js
+function makeCard(carType, summary, primaryColor) {
+  // ...
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+  const card = document.createElement('article');
+  
+  // TailwindCSS cannot read the first class name
+  card.className = `bg-${primaryColor} ...`;
+  
+  return card;
 
-## Submitting your solution
+  // ...
+}
+```
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+However, this works:
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+```js
+function makeCard(carType, summary) {
+  // ...
 
-## Sharing your solution
+  const card = document.createElement('article');
+  
+  // TailwindCSS class name is defined statically
+  const backgroundColor = 'bg-bright-orange';
 
-There are multiple places you can share your solution:
+  // TailwindCSS will read the first class name (along w/ all the others)
+  card.className = `${backgroundColor} ...`;
+  
+  return card;
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+  // ...
+}
+```
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
+But passing that would mean passing in a new string for the background color, 
+the link text color, and the link background color on hover as arguments, as 
+opposed to the shared color itself. TailwindCSS recommends storing the full 
+class name strings into JS objects, like so:
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+```js
+function makeCard(carType, summary, primaryColor) {
+  const colorVariants = {
+    background: {
+      brightOrange: 'bg-bright-orange',
+      darkCyan: 'bg-dark-cyan',
+      veryDarkCyan: 'bg-very-dark-cyan',
+    },
+    text: {
+      brightOrange: 'text-bright-orange',
+      darkCyan: 'text-dark-cyan',
+      veryDarkCyan: 'text-very-dark-cyan',
+    },
+    hover: {
+      background: {
+        brightOrange: 'hover:bg-bright-orange',
+        darkCyan: 'hover:bg-dark-cyan',
+        veryDarkCyan: 'hover:bg-very-dark-cyan',
+      },
+    },
+  };
 
-## Got feedback for us?
+  const card = document.createElement('article');
+  card.className = `${colorVariants.background[primaryColor]} ...`;
+  
+  return card;
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+  // ...
+}
+```
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+While it works, maintaining said object can bring its own issues. What if I 
+wanted to accept new primary colors? I have to add a new color under each 
+property that I'm styling. What if I wanted to customize more CSS properties 
+or add more styling on certain states or screen sizes? I have to add more 
+nested objects, containing all of the colors I have so far. Granted, such 
+maintenance issues aren't relevant to the challenge. However, I can also see 
+that becoming a bigger issue on projects where that level of customization may 
+be needed. In the future, I might just leave it to the JS instead of the CSS 
+to handle that level of customization.
 
-**Have fun building!** 🚀
+### Useful resources
+
+- [px vs rem](https://stackoverflow.com/a/43131958) - This helped me understand why frontend developers use `rem` units in general. I also learned that it's not a good idea to set the root font size using `px`, but instead to use percentages to change the apparent root font size.
+
+## Author
+
+- Frontend Mentor - [@StephenYu2018](https://www.frontendmentor.io/profile/yourusername)
